@@ -9,19 +9,16 @@
 <body>
 
     <form method="POST" action="/">
-<!--        Toto je csrt token pro zabezpeceni-->
+<!--    Toto je csrt token pro zabezpeceni-->
         {% csrf_token %}
 
-<!--&lt;!&ndash;        Pokud je empty_username true (řeší se ve views.py), tak se zobrazi chyba a formular se neodesle&ndash;&gt;-->
-<!--        {% if empty_username %}-->
-<!--        <p class="error">Musíte zadat jméno</p>-->
-<!--        {% endif %}-->
+     <!--    Vložení formulare, který řešíme ve views.py-->
+        <div class="form-inputs {% if jokeForm.user_name.errors %}errors{% endif %}">
+            {{ jokeForm.user_name.errors }}
+            {{ jokeForm.user_name.label_tag }}
+            {{ jokeForm.user_name }}
+        </div>
 
-<!--&lt;!&ndash;        Toto je samotny formular&ndash;&gt;-->
-<!--        <label for="visitorname">Vaše jméno:</label>-->
-<!--        <input type="text" id="visitorname" name="username">-->
-
-        {{ jokeForm }}
         <button type="submit">Odeslat</button>
 
     </form>
