@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -7,8 +8,12 @@ def jokes(request):
     if request.method == "POST":
         visiter_name = request.POST["username"]
         print(visiter_name)  # pro testování jestli se nám vrací data
-        return render(request, "jokesapp/thank-you.html")
+        return HttpResponseRedirect("/thank-you")
 
-    # jinak se zobrazi stranka s formularem
+    # jinak se zobrazi stranka s formularem = původní načtení stránky
     return render(request, "jokesapp/index.html")
+
+
+def thank_you(request):
+    return render(request, "jokesapp/thank-you.html")
 
