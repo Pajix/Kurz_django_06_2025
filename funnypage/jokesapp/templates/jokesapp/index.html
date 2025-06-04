@@ -15,19 +15,30 @@
         <h1>Formulář</h1>
 
         <form method="POST" action="/">
-        <!--    Toto je csrt token pro zabezpeceni-->
-        {% csrf_token %}
+            <!--    Toto je csrt token pro zabezpeceni-->
+            {% csrf_token %}
 
-        <!--    Vložení formulare, který řešíme ve views.py-->
-        <div class="form-inputs {% if jokeForm.user_name.errors %}errors{% endif %}">
-            {{ jokeForm.user_name.errors }}
-            {{ jokeForm.user_name.label_tag }}
-            {{ jokeForm.user_name }}
-        </div>
+            <!--    Vložení formulare, který řešíme ve views.py-->
+            <div class="form-inputs {% if jokeForm.user_name.errors %}errors{% endif %}">
+                {{ jokeForm.user_name.errors }}
+                {{ jokeForm.user_name }}
+            </div>
 
-        <button type="submit">Odeslat</button>
+            <!--    Vložení formulare, který řešíme ve views.py-->
+            <div class="form-inputs {% if jokeForm.user_name.errors %}errors{% endif %}">
+                {{ jokeForm.joke_text.errors }}
+                {{ jokeForm.joke_text }}
+            </div>
 
-    </form>
+            <!--    Vložení formulare, který řešíme ve views.py-->
+            <div class="form-inputs {% if jokeForm.user_name.errors %}errors{% endif %}">
+                {{ jokeForm.rating.errors }}
+                {{ jokeForm.rating }}
+            </div>
+
+            <button type="submit">Odeslat</button>
+
+        </form>
 
     </section>
 
