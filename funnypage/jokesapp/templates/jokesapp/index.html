@@ -9,10 +9,19 @@
 <body>
 
     <form method="POST" action="/">
+<!--        Toto je csrt token pro zabezpeceni-->
         {% csrf_token %}
+
+<!--        Pokud je empty_username true (řeší se ve views.py), tak se zobrazi chyba a formular se neodesle-->
+        {% if empty_username %}
+        <p class="error">Musíte zadat jméno</p>
+        {% endif %}
+
+<!--        Toto je samotny formular-->
         <label for="visitorname">Vaše jméno:</label>
         <input type="text" id="visitorname" name="username">
         <button type="submit">Odeslat</button>
+
     </form>
 
 </body>
