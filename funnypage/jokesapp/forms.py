@@ -15,7 +15,7 @@ class JokeForm(forms.Form):
                                 )
 
     rating = forms.IntegerField(label="Váš rating",
-                                widget=forms.NumberInput(attrs={"placeholder": "Rating"}),
+                                widget=forms.NumberInput(attrs={"placeholder": "1 - 5"}),
                                 min_value=1,
                                 max_value=5,
                                 )
