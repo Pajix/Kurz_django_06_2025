@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141414;
+}
+
+.form {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+form label {
+    display: block;
+    margin-right: 5px;
+}
+
+form input {
+    outline: none;
+}
+
+form button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: white;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: #b06565;
+}

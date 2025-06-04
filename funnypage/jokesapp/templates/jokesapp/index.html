@@ -1,18 +1,24 @@
-<!DOCTYPE html>
+{% load static %}
+
+{{ '<' }}{{ '!DOCTYPE html>' }}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Dokument</title>
+    <link rel="stylesheet" href="{% static 'jokesapp/style.css' %}">
 </head>
 
 <body>
 
-    <form method="POST" action="/">
-<!--    Toto je csrt token pro zabezpeceni-->
+    <section class="form">
+        <h1>Formulář</h1>
+
+        <form method="POST" action="/">
+        <!--    Toto je csrt token pro zabezpeceni-->
         {% csrf_token %}
 
-     <!--    Vložení formulare, který řešíme ve views.py-->
+        <!--    Vložení formulare, který řešíme ve views.py-->
         <div class="form-inputs {% if jokeForm.user_name.errors %}errors{% endif %}">
             {{ jokeForm.user_name.errors }}
             {{ jokeForm.user_name.label_tag }}
@@ -22,6 +28,10 @@
         <button type="submit">Odeslat</button>
 
     </form>
+
+    </section>
+
+
 
 </body>
 
