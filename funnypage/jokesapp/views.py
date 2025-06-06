@@ -27,3 +27,6 @@ def jokes(request):
 def thank_you(request):
     return render(request, "jokesapp/thank-you.html")
 
+
+def all_jokes(request):
+    return render(request, "jokesapp/all-jokes.html")
