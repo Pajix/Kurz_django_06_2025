@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'jokesapp/all-jokes.css' %}">
 </head>
 
 <body>
@@ -15,8 +16,8 @@
         {% for one_joke in all_our_jokes %}
             <article class="one-joke">
                 <p>{{ one_joke.joke_text }}</p>
-                <p><em>{{ one_joke.user_name }}</em></p>
-                <p>{{ one_joke.rating }}</p>
+                <p class="joke-author"><em>{{ one_joke.user_name }}</em></p>
+                <p>rating: {{ one_joke.rating }}</p>
             </article>
         {% endfor %}
 
