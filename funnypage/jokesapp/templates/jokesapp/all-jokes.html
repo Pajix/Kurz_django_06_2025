@@ -8,11 +8,21 @@
 </head>
 
 <body>
-    <h1>Všechny vtipy</h1>
+
+    <section class="jokes">
+        <h1>Všechny vtipy</h1>
+        {% for one_joke in all_our_jokes %}
+            <article class="one-joke">
+                <p>{{ one_joke.joke_text }}</p>
+                <p><em>{{ one_joke.user_name }}</em></p>
+                <p>{{ one_joke.rating }}</p>
+            </article>
+        {% endfor %}
+
+    </section>
+
 
 
 </body>
-
-
 
 </html>

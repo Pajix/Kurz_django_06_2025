@@ -29,4 +29,10 @@ def thank_you(request):
 
 
 def all_jokes(request):
-    return render(request, "jokesapp/all-jokes.html")
+    # natáhneme vsechny vtipy do listu all_jokes
+    all_jokes = Jokes.objects.all()
+    # vratime stranku s vtipy a pošleme do ní list all_jokes pro další zpracování
+    return render(request, "jokesapp/all-jokes.html", {"all_our_jokes": all_jokes})
+
+
+
