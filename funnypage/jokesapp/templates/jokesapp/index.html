@@ -12,10 +12,13 @@
 <body>
 
     <section class="form">
+        <!-- all-jokes-url = toto je název pro url který jsme si vytvořili v urls.py -->
+        <a href="{% url 'all-jokes-url' %}">Všechny vtipy</a>
+
         <h1>Formulář</h1>
 
         <form method="POST" action="/">
-            <!--    Toto je csrt token pro zabezpeceni-->
+            <!-- Toto je csrt token pro zabezpeceni -->
             {% csrf_token %}
 
             <!-- Vypsání jednotlivých inputu ve formulari pomoci cyklu for -->
@@ -25,25 +28,6 @@
                     {{ one_field }}
                 </div>
             {% endfor %}
-
-<!--            Vypsání jednotlivých inputu ve formulari pomoci jednotlicvych kroku = lepší je pomocí cyklu for-->
-            <!--    Vložení formulare, který řešíme ve views.py-->
-<!--            <div class="form-inputs {% if jokeForm.user_name.errors %}errors{% endif %}">-->
-<!--                {{ jokeForm.user_name.errors }}-->
-<!--                {{ jokeForm.user_name }}-->
-<!--            </div>-->
-
-<!--            &lt;!&ndash;    Vložení formulare, který řešíme ve views.py&ndash;&gt;-->
-<!--            <div class="form-inputs {% if jokeForm.joke_text.errors %}errors{% endif %}">-->
-<!--                {{ jokeForm.joke_text.errors }}-->
-<!--                {{ jokeForm.joke_text }}-->
-<!--            </div>-->
-
-<!--            &lt;!&ndash;    Vložení formulare, který řešíme ve views.py&ndash;&gt;-->
-<!--            <div class="form-inputs {% if jokeForm.rating.errors %}errors{% endif %}">-->
-<!--                {{ jokeForm.rating.errors }}-->
-<!--                {{ jokeForm.rating }}-->
-<!--            </div>-->
 
             <button type="submit">Odeslat</button>
 

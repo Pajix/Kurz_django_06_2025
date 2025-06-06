@@ -10,6 +10,7 @@
 <body>
 
     <section class="jokes">
+        <a href="{% url 'home-page' %}">Úvodní strana</a>
         <h1>Všechny vtipy</h1>
         {% for one_joke in all_our_jokes %}
             <article class="one-joke">
