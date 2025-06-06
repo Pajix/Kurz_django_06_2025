@@ -10,6 +10,7 @@ body {
     background-color: #141414;
 }
 
+/*Toto je pro .form jako pro clssu form, ne pro formulář*/
 .form {
     height: 100vh;
     display: flex;
@@ -19,6 +20,24 @@ body {
     color: white;
 }
 
+.form a {
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 25px;
+    background-color: #ff0000;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.form a:hover {
+    cursor: pointer;
+    background-color: #b06565;
+}
+
+
+
+/*Toto je pro formulář*/
 form input, form textarea {
     outline: none;
     width: 200px;
